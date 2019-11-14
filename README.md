@@ -10,3 +10,7 @@ is currently in early development.
 ##### v0.2
  - Users can set reminders for activities
  - Users can create custom activity templates
+
+##### v0.3
+ - Users can now add custom colors for activities more easily
+ - More default templates are available.
