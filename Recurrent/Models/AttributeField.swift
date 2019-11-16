@@ -16,9 +16,16 @@ struct AttributeFields {
 
 class AnyAttributeField {
     let name: String
+    var type: Any.Type {
+        return Any.self
+    }
     init(_ name: String) {
         self.name = name
     }
 }
 
-class AttributeField<T>: AnyAttributeField {}
+class AttributeField<T>: AnyAttributeField {
+    override var type: Any.Type {
+        return T.self
+    }
+}

@@ -15,4 +15,21 @@ class ActivityTemplate {
         self.attributeMap = attributeMap
         self.fieldsToFill = fieldsToFill
     }
+    func byFilling(with attributes: AttributeMap) -> Activity? {
+        guard attributes.fills(self.fieldsToFill) else {
+            return nil
+        }
+        return Activity(attributes: attributes.union(with: self.attributeMap))
+    }
+}
+
+extension ActivityTemplate {
+    static let basic: ActivityTemplate = {
+        let map = AttributeMap()
+        return ActivityTemplate(attributeMap: map, fieldsToFill: [
+            AttributeFields.title,
+            AttributeFields.backgroundColor,
+            AttributeFields.foregroundColor
+        ])
+    }()
 }

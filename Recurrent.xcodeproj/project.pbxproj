@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E933A30A237FB21500BFDF9A /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E933A309237FB21500BFDF9A /* ActivityListView.swift */; };
 		E9552A7D2379226100EBC1D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9552A7C2379226100EBC1D4 /* AppDelegate.swift */; };
 		E9552A7F2379226100EBC1D4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9552A7E2379226100EBC1D4 /* SceneDelegate.swift */; };
 		E9552A822379226100EBC1D4 /* Recurrent.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9552A802379226100EBC1D4 /* Recurrent.xcdatamodeld */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E933A309237FB21500BFDF9A /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
 		E9552A792379226100EBC1D4 /* Recurrent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recurrent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9552A7C2379226100EBC1D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9552A7E2379226100EBC1D4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E933A308237FB1EB00BFDF9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9552A832379226100EBC1D4 /* ContentView.swift */,
+				E933A309237FB21500BFDF9A /* ActivityListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E9552A702379226000EBC1D4 = {
 			isa = PBXGroup;
 			children = (
@@ -69,7 +80,7 @@
 				E9552A93237922B300EBC1D4 /* Models */,
 				E9552A7C2379226100EBC1D4 /* AppDelegate.swift */,
 				E9552A7E2379226100EBC1D4 /* SceneDelegate.swift */,
-				E9552A832379226100EBC1D4 /* ContentView.swift */,
+				E933A308237FB1EB00BFDF9A /* Views */,
 				E9552A852379226200EBC1D4 /* Assets.xcassets */,
 				E9552A8A2379226200EBC1D4 /* LaunchScreen.storyboard */,
 				E9552A8D2379226200EBC1D4 /* Info.plist */,
@@ -173,6 +184,7 @@
 				E9552A822379226100EBC1D4 /* Recurrent.xcdatamodeld in Sources */,
 				E9552A9B237928E000EBC1D4 /* ActivityTemplate.swift in Sources */,
 				E9552A7D2379226100EBC1D4 /* AppDelegate.swift in Sources */,
+				E933A30A237FB21500BFDF9A /* ActivityListView.swift in Sources */,
 				E9552A842379226100EBC1D4 /* ContentView.swift in Sources */,
 				E9552A992379257B00EBC1D4 /* AttributeField.swift in Sources */,
 				E9552A7F2379226100EBC1D4 /* SceneDelegate.swift in Sources */,
