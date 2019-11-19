@@ -9,18 +9,20 @@
 import SwiftUI
 
 struct ActivityListView: View {
-    var activities: IdentifiableArray<Activity>
+    var activities: IdentifiableCollection<[Activity]>
     var body: some View {
         VStack {
             ForEach(activities) { activity in
-                Text("FOO")
+                Text(activity.value.title)
+                    .foregroundColor(activity.value.foregroundColor)
+                    .background(activity.value.backgroundColor)
             }
         }
     }
 }
 
 struct ActivityListView_Previews: PreviewProvider {
-    let firstActivity: Activity = {
+    static let firstActivity: Activity = {
         let map = AttributeMap()
         guard map.set(AttributeFields.title, to: "The first activity") &&
               map.set(AttributeFields.backgroundColor, to: .blue) &&
@@ -34,8 +36,8 @@ struct ActivityListView_Previews: PreviewProvider {
         return activity
     }()
     static var previews: some View {
-        ActivityListView(activities: IdentifiableArray([
-            
+        ActivityListView(activities: IdentifiableCollection([
+            firstActivity
         ]))
     }
 }
