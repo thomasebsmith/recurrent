@@ -9,10 +9,10 @@
 import SwiftUI
 
 struct ActivityListView: View {
-    var activities: [Activity]
+    var activities: IdentifiableArray<Activity>
     var body: some View {
         VStack {
-            ForEach(activities, id: \.self) { activity in
+            ForEach(activities) { activity in
                 Text("FOO")
             }
         }
@@ -34,8 +34,8 @@ struct ActivityListView_Previews: PreviewProvider {
         return activity
     }()
     static var previews: some View {
-        ActivityListView(activities: [
-        
-        ])
+        ActivityListView(activities: IdentifiableArray([
+            
+        ]))
     }
 }
