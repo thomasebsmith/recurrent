@@ -20,6 +20,8 @@
 		E9552A992379257B00EBC1D4 /* AttributeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9552A982379257B00EBC1D4 /* AttributeField.swift */; };
 		E9552A9B237928E000EBC1D4 /* ActivityTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9552A9A237928E000EBC1D4 /* ActivityTemplate.swift */; };
 		E990899F2383AB2A0006BB9B /* IdentifiableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990899E2383AB2A0006BB9B /* IdentifiableCollection.swift */; };
+		E9AAAF072384F75F00027701 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AAAF062384F75F00027701 /* ActivityView.swift */; };
+		E9AAAF092384F80F00027701 /* View+widthParent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9AAAF082384F80F00027701 /* View+widthParent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		E9552A982379257B00EBC1D4 /* AttributeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeField.swift; sourceTree = "<group>"; };
 		E9552A9A237928E000EBC1D4 /* ActivityTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTemplate.swift; sourceTree = "<group>"; };
 		E990899E2383AB2A0006BB9B /* IdentifiableCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentifiableCollection.swift; sourceTree = "<group>"; };
+		E9AAAF062384F75F00027701 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		E9AAAF082384F80F00027701 /* View+widthParent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+widthParent.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,8 +58,9 @@
 		E933A308237FB1EB00BFDF9A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E9552A832379226100EBC1D4 /* ContentView.swift */,
 				E933A309237FB21500BFDF9A /* ActivityListView.swift */,
+				E9AAAF062384F75F00027701 /* ActivityView.swift */,
+				E9552A832379226100EBC1D4 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				E990899E2383AB2A0006BB9B /* IdentifiableCollection.swift */,
+				E9AAAF082384F80F00027701 /* View+widthParent.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9AAAF072384F75F00027701 /* ActivityView.swift in Sources */,
 				E9552A95237922F600EBC1D4 /* Activity.swift in Sources */,
 				E9552A822379226100EBC1D4 /* Recurrent.xcdatamodeld in Sources */,
 				E9552A9B237928E000EBC1D4 /* ActivityTemplate.swift in Sources */,
@@ -199,6 +206,7 @@
 				E9552A842379226100EBC1D4 /* ContentView.swift in Sources */,
 				E9552A992379257B00EBC1D4 /* AttributeField.swift in Sources */,
 				E9552A7F2379226100EBC1D4 /* SceneDelegate.swift in Sources */,
+				E9AAAF092384F80F00027701 /* View+widthParent.swift in Sources */,
 				E9552A972379245D00EBC1D4 /* AttributeMap.swift in Sources */,
 				E990899F2383AB2A0006BB9B /* IdentifiableCollection.swift in Sources */,
 			);

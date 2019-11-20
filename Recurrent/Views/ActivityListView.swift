@@ -13,9 +13,7 @@ struct ActivityListView: View {
     var body: some View {
         VStack {
             ForEach(activities) { activity in
-                Text(activity.value.title)
-                    .foregroundColor(activity.value.foregroundColor)
-                    .background(activity.value.backgroundColor)
+                ActivityView(activity.value)
             }
         }
     }
@@ -31,13 +29,29 @@ struct ActivityListView_Previews: PreviewProvider {
             return Activity(attributes: map)
         }
         guard let activity = ActivityTemplate.basic.byFilling(with: map) else {
+            print("Couldn't create activity")
+            return Activity(attributes: map)
+        }
+        return activity
+    }()
+    static let secondActivity: Activity = {
+        let map = AttributeMap()
+        guard map.set(AttributeFields.title, to: "The second activity") &&
+              map.set(AttributeFields.backgroundColor, to: .yellow) &&
+              map.set(AttributeFields.foregroundColor, to: .white) else {
+            print("Couldn't create activity")
+            return Activity(attributes: map)
+        }
+        guard let activity = ActivityTemplate.basic.byFilling(with: map) else {
+            print("Couldn't create activity")
             return Activity(attributes: map)
         }
         return activity
     }()
     static var previews: some View {
         ActivityListView(activities: IdentifiableCollection([
-            firstActivity
+            firstActivity,
+            secondActivity
         ]))
     }
 }
