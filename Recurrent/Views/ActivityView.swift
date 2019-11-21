@@ -27,7 +27,10 @@ struct ActivityView_Previews: PreviewProvider {
         let map = AttributeMap()
         guard map.set(AttributeFields.title, to: "The preview activity") &&
               map.set(AttributeFields.backgroundColor, to: .blue) &&
-              map.set(AttributeFields.foregroundColor, to: .white) else {
+              map.set(AttributeFields.foregroundColor, to: .white) &&
+              map.set(AttributeFields.date,
+                  to: Date())
+        else {
             print("Couldn't create activity")
             return Activity(attributes: map)
         }

@@ -12,6 +12,7 @@ struct AttributeFields {
     static let title = AttributeField<String>("title")
     static let backgroundColor = AttributeField<Color>("backgroundColor")
     static let foregroundColor = AttributeField<Color>("foregroundColor")
+    static let date = AttributeField<Date>("date")
 }
 
 class AnyAttributeField {
