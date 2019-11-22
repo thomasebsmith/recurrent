@@ -9,13 +9,16 @@
 import SwiftUI
 
 struct ActivityView: View {
-    static let height: CGFloat = 70.0
+    static let secondsPerHeight = 60.0
     let activity: Activity
     var body: some View {
         Text(activity.title)
             .foregroundColor(activity.foregroundColor)
-            .widthParent(height: ActivityView.height, alignment: .center)
+            .widthParent(height: height, alignment: .center)
             .background(activity.backgroundColor)
+    }
+    var height: CGFloat {
+        return CGFloat(activity.date.duration / ActivityView.secondsPerHeight)
     }
     init(_ activity: Activity) {
         self.activity = activity
@@ -25,11 +28,11 @@ struct ActivityView: View {
 struct ActivityView_Previews: PreviewProvider {
     static let activity: Activity = {
         let map = AttributeMap()
+        let date = DateInterval(start: Date(), duration: 1*60*60)
         guard map.set(AttributeFields.title, to: "The preview activity") &&
               map.set(AttributeFields.backgroundColor, to: .blue) &&
               map.set(AttributeFields.foregroundColor, to: .white) &&
-              map.set(AttributeFields.date,
-                  to: Date())
+              map.set(AttributeFields.date, to: date)
         else {
             print("Couldn't create activity")
             return Activity(attributes: map)

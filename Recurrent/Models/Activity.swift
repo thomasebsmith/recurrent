@@ -22,7 +22,11 @@ class Activity {
     var backgroundColor: Color {
         return attributes[AttributeFields.backgroundColor] ?? .clear
     }
-    var date: Date {
-        return attributes[AttributeFields.date] ?? Date(timeIntervalSince1970: 0.0)
+    var date: DateInterval {
+        return attributes[AttributeFields.date] ??
+                DateInterval(
+                    start: Date(timeIntervalSince1970: 0.0),
+                    duration: 0.0
+                )
     }
 }

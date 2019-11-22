@@ -22,11 +22,14 @@ struct ActivityListView: View {
 struct ActivityListView_Previews: PreviewProvider {
     static let firstActivity: Activity = {
         let map = AttributeMap()
+        let date = DateInterval(
+            start: Date(timeIntervalSinceNow: 0),
+            duration: 2*60*60
+        )
         guard map.set(AttributeFields.title, to: "The first activity") &&
               map.set(AttributeFields.backgroundColor, to: .blue) &&
               map.set(AttributeFields.foregroundColor, to: .white) &&
-              map.set(AttributeFields.date,
-                  to: Date())
+            map.set(AttributeFields.date, to: date)
         else {
             print("Couldn't create activity")
             return Activity(attributes: map)
@@ -39,11 +42,14 @@ struct ActivityListView_Previews: PreviewProvider {
     }()
     static let secondActivity: Activity = {
         let map = AttributeMap()
+        let date = DateInterval(
+            start: Date(timeIntervalSinceNow: 1*60*70),
+            duration: 1*60*60
+        )
         guard map.set(AttributeFields.title, to: "The second activity") &&
               map.set(AttributeFields.backgroundColor, to: .yellow) &&
               map.set(AttributeFields.foregroundColor, to: .white) &&
-              map.set(AttributeFields.date,
-                      to: Date(timeIntervalSince1970: 0.0))
+              map.set(AttributeFields.date, to: date)
         else {
             print("Couldn't create activity")
             return Activity(attributes: map)
