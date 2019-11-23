@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct ActivityView: View {
-    static let secondsPerHeight = 60.0
+    static let secondsPerHeight = 200.0
     let activity: Activity
     var body: some View {
         Text(activity.title)
