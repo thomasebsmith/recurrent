@@ -9,26 +9,30 @@
 import SwiftUI
 
 struct ActivityView: View {
-    static let secondsPerHeight = 200.0
     let activity: Activity
+    let secondsPerHeight: Double
     var body: some View {
         Text(activity.title)
             .foregroundColor(activity.foregroundColor)
             .widthParent(height: height, alignment: .center)
             .background(activity.backgroundColor)
+            .onTapGesture {
+                print("Activity \(self.activity.title) tapped")
+            }
     }
     var height: CGFloat {
-        return CGFloat(activity.date.duration / ActivityView.secondsPerHeight)
+        return CGFloat(activity.date.duration / secondsPerHeight)
     }
-    init(_ activity: Activity) {
+    init(_ activity: Activity, secondsPerHeight: Double = 200.0) {
         self.activity = activity
+        self.secondsPerHeight = secondsPerHeight
     }
 }
 
 struct ActivityView_Previews: PreviewProvider {
     static let activity: Activity = {
         let map = AttributeMap()
-        let date = DateInterval(start: Date(), duration: 1*60*60)
+        let date = DateInterval(start: Date(), duration: 4*60*60)
         guard map.set(AttributeFields.title, to: "The preview activity") &&
               map.set(AttributeFields.backgroundColor, to: .blue) &&
               map.set(AttributeFields.foregroundColor, to: .white) &&

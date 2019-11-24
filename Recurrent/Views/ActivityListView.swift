@@ -9,14 +9,17 @@
 import SwiftUI
 
 struct ActivityListView: View {
+    static let secondsPerHeight = 200.0
     var activities: IdentifiableCollection<[Activity]>
     var listTimeSpan: DateInterval
     var body: some View {
         GeometryReader { geometry in
             ScrollView {
                 ForEach(self.activities) { activity in
-                    ActivityView(activity.value)
-                        .position(self.position(for: activity, with: geometry))
+                    ActivityView(
+                        activity.value,
+                        secondsPerHeight: type(of: self).secondsPerHeight
+                    ).position(self.position(for: activity, with: geometry))
                 }
             }
         }
@@ -27,8 +30,8 @@ struct ActivityListView: View {
     ) -> CGPoint {
         let interval = activity.value.date
         let timeDifference = listTimeSpan.start.distance(to: interval.start)
-        let y = timeDifference / ActivityView.secondsPerHeight +
-            interval.duration / ActivityView.secondsPerHeight / 2
+        let y = timeDifference / type(of: self).secondsPerHeight +
+            interval.duration / type(of: self).secondsPerHeight / 2
         return CGPoint(x: Double(geometry.size.width / 2), y: y)
     }
 }
