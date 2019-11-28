@@ -14,3 +14,6 @@ is currently in early development.
 ##### v0.3
  - Users can now add custom colors for activities more easily
  - More default templates are available.
+
+##### v0.4
+ - Recurrent is now available on MacOS
