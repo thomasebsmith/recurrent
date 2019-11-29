@@ -17,3 +17,5 @@ is currently in early development.
 
 ##### v0.4
  - Recurrent is now available on MacOS
+ - UI is now optimized for more devices
+ - UI bugs are (mostly) fixed
