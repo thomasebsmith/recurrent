@@ -9,15 +9,25 @@
 import SwiftUI
 
 struct ToolbarView: View {
+    @State var newActivityPopoverPresented = false
+    @State var helpPopoverPresented = false
     var body: some View {
         HStack {
-            NavigationLink(destination: NewActivityView()) {
+            Button(action: {
+                self.newActivityPopoverPresented.toggle()
+            }) {
                 Text("+")
-            }.padding()
+            }.padding().popover(isPresented: $newActivityPopoverPresented) {
+                NewActivityView()
+            }
             Spacer()
-            NavigationLink(destination: HelpView()) {
+            Button(action: {
+                self.newActivityPopoverPresented.toggle()
+            }) {
                 Text("?")
-            }.padding()
+            }.padding().popover(isPresented: $helpPopoverPresented) {
+                HelpView()
+            }
         }
     }
 }
