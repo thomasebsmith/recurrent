@@ -28,7 +28,7 @@ struct ToolbarView: View {
             }.padding().popover(isPresented: $helpPopoverPresented) {
                 HelpView()
             }
-        }
+        }.background(Color("Toolbar"))
     }
 }
 
