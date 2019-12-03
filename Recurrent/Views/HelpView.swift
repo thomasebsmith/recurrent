@@ -10,7 +10,18 @@ import SwiftUI
 
 struct HelpView: View {
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            ZStack {
+                HStack {
+                    Button("Cancel") {
+                        print("TODO: Dismiss")
+                    }.padding()
+                    Spacer()
+                }
+                Text("Help").bold().font(.system(size: 24)).padding()
+            }
+            Spacer()
+        }
     }
 }
 

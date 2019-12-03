@@ -10,7 +10,18 @@ import SwiftUI
 
 struct NewActivityView: View {
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            ZStack {
+                HStack {
+                    Button("Cancel") {
+                        print("TODO: Dismiss")
+                    }.padding()
+                    Spacer()
+                }
+                Text("New Activity").bold().font(.system(size: 24)).padding()
+            }
+            Spacer()
+        }
     }
 }
 
