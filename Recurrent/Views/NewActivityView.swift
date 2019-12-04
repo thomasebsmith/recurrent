@@ -9,16 +9,17 @@
 import SwiftUI
 
 struct NewActivityView: View {
+    @Binding var isPresented: Bool
     var body: some View {
         VStack {
             ZStack {
                 HStack {
                     Button("Cancel") {
-                        print("TODO: Dismiss")
+                        self.isPresented.toggle()
                     }.padding()
                     Spacer()
                 }
-                Text("New Activity").bold().font(.system(size: 24)).padding()
+                Text("New Activity").bold().font(Font.system(size: 24)).padding()
             }
             Spacer()
         }
@@ -27,6 +28,6 @@ struct NewActivityView: View {
 
 struct NewActivityView_Previews: PreviewProvider {
     static var previews: some View {
-        NewActivityView()
+        NewActivityView(isPresented: Binding<Bool>(get: { true }) {_ in })
     }
 }

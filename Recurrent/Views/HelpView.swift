@@ -9,12 +9,13 @@
 import SwiftUI
 
 struct HelpView: View {
+    @Binding var isPresented: Bool
     var body: some View {
         VStack {
             ZStack {
                 HStack {
                     Button("Cancel") {
-                        print("TODO: Dismiss")
+                        self.isPresented.toggle()
                     }.padding()
                     Spacer()
                 }
@@ -27,6 +28,6 @@ struct HelpView: View {
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView()
+        HelpView(isPresented: Binding<Bool>(get: { true }) {_ in })
     }
 }

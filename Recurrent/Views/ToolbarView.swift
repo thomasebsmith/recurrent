@@ -18,7 +18,7 @@ struct ToolbarView: View {
             }) {
                 Text("+")
             }.padding().popover(isPresented: $newActivityPopoverPresented) {
-                NewActivityView()
+                NewActivityView(isPresented: self.$newActivityPopoverPresented)
             }
             Spacer()
             Button(action: {
@@ -26,7 +26,7 @@ struct ToolbarView: View {
             }) {
                 Text("?")
             }.padding().popover(isPresented: $helpPopoverPresented) {
-                HelpView()
+                HelpView(isPresented: self.$helpPopoverPresented)
             }
         }.background(Color("Toolbar"))
     }
