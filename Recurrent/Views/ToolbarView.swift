@@ -8,32 +8,36 @@
 
 import SwiftUI
 
-struct ToolbarView: View {
+struct ToolbarView<Content>: View where Content: View {
     @State var newActivityPopoverPresented = false
     @State var helpPopoverPresented = false
+    var content: () -> Content
     var body: some View {
-        HStack {
-            Button(action: {
-                self.newActivityPopoverPresented.toggle()
-            }) {
-                Text("+")
-            }.padding().popover(isPresented: $newActivityPopoverPresented) {
-                NewActivityView(isPresented: self.$newActivityPopoverPresented)
-            }
-            Spacer()
-            Button(action: {
-                self.newActivityPopoverPresented.toggle()
-            }) {
-                Text("?")
-            }.padding().popover(isPresented: $helpPopoverPresented) {
-                HelpView(isPresented: self.$helpPopoverPresented)
-            }
-        }.background(Color("Toolbar"))
+        NavigationView {
+            content()
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(
+                leading: Button("+") {
+                    self.newActivityPopoverPresented.toggle()
+                }.popover(isPresented: $newActivityPopoverPresented) {
+                    NewActivityView(
+                        isPresented: self.$newActivityPopoverPresented
+                    )
+                },
+                trailing: Button("?") {
+                    self.newActivityPopoverPresented.toggle()
+                }.popover(isPresented: $helpPopoverPresented) {
+                    HelpView(isPresented: self.$helpPopoverPresented)
+                }
+            )
+        }
     }
 }
 
 struct ToolbarView_Previews: PreviewProvider {
     static var previews: some View {
-        ToolbarView()
+        ToolbarView {
+            Spacer()
+        }
     }
 }
