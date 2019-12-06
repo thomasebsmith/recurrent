@@ -6,6 +6,7 @@
 //  Copyright © 2019 Thomas Smith. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
 
 class Activity {
@@ -28,5 +29,18 @@ class Activity {
                     start: Date(timeIntervalSince1970: 0.0),
                     duration: 0.0
                 )
+    }
+    required init?(coder: NSCoder) {
+        if let attributes = coder.decodeObject() as? AttributeMap {
+            self.attributes = attributes
+            return
+        }
+        return nil
+    }
+}
+
+extension Activity: NSCoding {
+    func encode(with coder: NSCoder) {
+        coder.encode(attributes)
     }
 }

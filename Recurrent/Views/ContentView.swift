@@ -6,15 +6,14 @@
 //  Copyright © 2019 Thomas Smith. All rights reserved.
 //
 
+import CoreData
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            ToolbarView {
-                VStack {
-                    Text("Content here")
-                }
+        ToolbarView {
+            VStack {
+                Text("Content here")
             }
         }
     }
