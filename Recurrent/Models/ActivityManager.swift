@@ -10,35 +10,42 @@ import CoreData
 import UIKit
 
 class ActivityManager {
-    private let oldActivities: [Date: [Activity]]
-    private let newActivities: [Date: [Activity]]
-    init() {
-        oldActivities = [:]
-        newActivities = [:]
+    private var oldActivities: [Date: [Activity]]
+    private var newActivities: [Date: [Activity]]
+    private func add(activity: Activity, to array: inout [Activity]?) {
+        if array != nil {
+            array?.append(activity)
+        }
+        else {
+            array = [activity]
+        }
+    }
+    private func add(data: String, to dict: inout [Date: [Activity]]) {
         guard let app = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
-        let oldRequest = NSFetchRequest<ActivityData>(
-            entityName: "oldActivities"
-        )
+        let request = NSFetchRequest<ActivityData>(entityName: data)
         do {
-            let oldData = try app.persistentContainer.viewContext.fetch(
-                oldRequest
-            )
-            let oldActivityList = oldData.map { data in
-                data.activity as? Activity
+            let data = try app.persistentContainer.viewContext.fetch(request)
+            let list = data.map { dataItem in
+                dataItem.activity as? Activity
             }
-            for activity in oldActivityList {
-                if let activity = activity {
+            for activityData in list {
+                if let activity = activityData {
                     let endDate = activity.date.end
                     let endDay = Calendar.current.startOfDay(for: endDate)
-                    // TODO
+                    add(activity: activity, to: &dict[endDay])
                 }
             }
-            // TODO: Work on new activities
         }
         catch {
             return
         }
+    }
+    init() {
+        oldActivities = [:]
+        newActivities = [:]
+        add(data: "oldActivities", to: &oldActivities)
+        add(data: "newActivities", to: &newActivities)
     }
 }
