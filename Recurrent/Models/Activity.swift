@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-class Activity {
+class Activity: NSObject {
     let attributes: AttributeMap
     init(attributes: AttributeMap) {
         self.attributes = attributes
