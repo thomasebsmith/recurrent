@@ -19,3 +19,7 @@ is currently in early development.
  - Recurrent is now available on MacOS
  - UI is now optimized for more devices
  - UI bugs are (mostly) fixed
+
+## Technology
+Recurrent is written in Swift, using Swift UI. Because it is written in Swift
+UI, there may be some UI bugs/imperfections.
