@@ -13,20 +13,27 @@ class ActivityManager {
     // MARK: - Class members and constants
     private var oldActivities: [Date: [Activity]]
     private var newActivities: [Date: [Activity]]
+    private var storedCutoff: Date = activityDateCutoff
     private static let activityStorageName = "ActivityData"
     private static let activityStorageKey = "activity"
     private static let oldStorageName = "oldActivities"
     private static let newStorageName = "newActivities"
 
     // MARK: - Private methods and getters
-    private var activityDateCutoff: Date {
+    static private var activityDateCutoff: Date {
         Calendar.current.startOfDay(for: Date())
     }
+    private func storageDate(for date: Date) -> Date {
+        return Calendar.current.startOfDay(for: date)
+    }
     private func storageDate(for activity: Activity) -> Date {
-        return Calendar.current.startOfDay(for: activity.date.end)
+        return storageDate(for: activity.date.end)
+    }
+    private func isNew(_ date: Date) -> Bool {
+        return storageDate(for: date) >= storedCutoff
     }
     private func isNew(_ activity: Activity) -> Bool {
-        return storageDate(for: activity) >= activityDateCutoff
+        return isNew(activity.date.end)
     }
     private func storageName(for activity: Activity) -> String {
         if isNew(activity) {
@@ -62,6 +69,16 @@ class ActivityManager {
             return
         }
     }
+    private func updateCutoff() {
+        let newCutoff = type(of: self).activityDateCutoff
+        if newCutoff > storedCutoff {
+            // We might need to move some activities from new to old
+            // TODO: Update dictionaries and Core Data
+        } else if newCutoff < storedCutoff {
+            // We might need to move some activities from old to new
+            // TODO: Update dictionaries and Core Data
+        }
+    }
 
     // MARK: - Public interface
     func add(activity: Activity) -> Bool {
@@ -85,6 +102,12 @@ class ActivityManager {
             return false
         }
         return true
+    }
+    func activities(on date: Date) -> [Activity] {
+        if isNew(date) {
+            return newActivities[date] ?? []
+        }
+        return oldActivities[date] ?? []
     }
     init() {
         oldActivities = [:]
