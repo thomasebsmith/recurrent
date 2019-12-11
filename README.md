@@ -3,7 +3,7 @@ Recurrent is an app for iOS and MacOS that can be used to schedule your time. It
 is currently in early development.
 
 ## Version History
-##### v0.1
+##### v0.1 (in development)
  - Users can now create and schedule activities
 
 ## Future Versions
@@ -22,4 +22,5 @@ is currently in early development.
 
 ## Technology
 Recurrent is written in Swift, using Swift UI. Because it is written in Swift
-UI, there may be some UI bugs/imperfections.
+UI and Swift UI is a recent technology, there may be some UI bugs or
+imperfections.
