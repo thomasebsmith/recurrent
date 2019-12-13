@@ -24,3 +24,7 @@ is currently in early development.
 Recurrent is written in Swift, using Swift UI. Because it is written in Swift
 UI and Swift UI is a recent technology, there may be some UI bugs or
 imperfections.
+
+## Copyright and Licensing
+Recurrent was created and developed by Thomas Smith. However, it is released as
+open source software under the MIT License (see [LICENSE](./LICENSE)).
