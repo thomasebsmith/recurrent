@@ -9,8 +9,10 @@
 import SwiftUI
 
 struct ActivityView: View {
+    // MARK: - Class members
     let activity: Activity
     let secondsPerHeight: Double
+    // MARK: - UI
     var body: some View {
         Text(activity.title)
             .foregroundColor(activity.foregroundColor)
@@ -20,9 +22,11 @@ struct ActivityView: View {
                 print("Activity \(self.activity.title) tapped")
             }
     }
+    // MARK: - Computed properties
     var height: CGFloat {
         return CGFloat(activity.date.duration / secondsPerHeight)
     }
+    // MARK: - Initializers
     init(_ activity: Activity, secondsPerHeight: Double = 200.0) {
         self.activity = activity
         self.secondsPerHeight = secondsPerHeight
@@ -30,6 +34,7 @@ struct ActivityView: View {
 }
 
 struct ActivityView_Previews: PreviewProvider {
+    // MARK: - Static members
     static let activity: Activity = {
         let map = AttributeMap()
         let date = DateInterval(start: Date(), duration: 4*60*60)

@@ -10,6 +10,10 @@ import CoreData
 import SwiftUI
 
 struct ContentView: View {
+    // MARK: - Class members
+    let manager = ActivityManager()
+
+    // MARK: - UI
     var body: some View {
         ToolbarView {
             VStack {
@@ -20,6 +24,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    // MARK: - Static members
     static var previews: some View {
         ContentView()
     }
