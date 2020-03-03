@@ -5,6 +5,7 @@ is currently in early development.
 ## Version History
 ##### v0.1 (in development)
  - Users can now create and schedule activities
+ - Users can view their scheduled activities easily
 
 ## Future Versions
 ##### v0.2
@@ -13,7 +14,7 @@ is currently in early development.
 
 ##### v0.3
  - Users can now add custom colors for activities more easily
- - More default templates are available.
+ - More default templates are available
 
 ##### v0.4
  - Recurrent is now available on MacOS
