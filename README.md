@@ -2,6 +2,10 @@
 Recurrent is an app for iOS and MacOS that can be used to schedule your time. It
 is currently in early development.
 
+## Features
+ - An easy-to-read main screen listing your activities for the day
+ - Activity templates to make it easy to schedule similar activities
+
 ## Version History
 ##### v0.1 (in development)
  - Users can now create and schedule activities
