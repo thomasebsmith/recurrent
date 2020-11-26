@@ -4,12 +4,13 @@ is currently in early development.
 
 ## Features
  - An easy-to-read main screen listing your activities for the day
- - Activity templates to make it easy to schedule similar activities
+ - Activity templates to make it simple to schedule similar activities
 
 ## Version History
 ##### v0.1 (in development)
  - Users can now create and schedule activities
  - Users can view their scheduled activities easily
+ - Support for MacOS and iOS
 
 ## Future Versions
 ##### v0.2
@@ -31,5 +32,6 @@ UI and Swift UI is a recent technology, there may be some UI bugs or
 imperfections.
 
 ## Copyright and Licensing
-Recurrent was created and developed by Thomas Smith. However, it is released as
-open source software under the MIT License (see [LICENSE](./LICENSE)).
+Recurrent was created and is developed by Thomas Smith.
+However, it is released as open source software
+under the MIT License (see [LICENSE](./LICENSE)).
