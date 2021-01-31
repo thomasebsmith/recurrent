@@ -12,15 +12,29 @@ import SwiftUI
 struct ContentView: View {
     // MARK: - Class members
     let manager = ActivityManager()
+    
+    private func getTodayActivitiesView() -> ActivityListView {
+        let today = Calendar.current.startOfDay(for: Date())
+        let tomorrow = Calendar.current.date(
+            byAdding: .day,
+            value: 1,
+            to: today
+        ) ?? today
+        return ActivityListView(
+            activities: IdentifiableCollection(manager.activities(on: today)),
+            listTimeSpan: DateInterval(start: today, end: tomorrow)
+        )
+    }
 
     // MARK: - UI
     var body: some View {
         ToolbarView {
             VStack {
-                Text("Content here")
+                getTodayActivitiesView()
             }
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -29,7 +29,8 @@ extension ActivityTemplate {
         return ActivityTemplate(attributeMap: map, fieldsToFill: [
             AttributeFields.title,
             AttributeFields.backgroundColor,
-            AttributeFields.foregroundColor
+            AttributeFields.foregroundColor,
+            AttributeFields.date
         ])
     }()
 }
