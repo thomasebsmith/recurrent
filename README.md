@@ -7,21 +7,21 @@ is currently in early development.
  - Activity templates to make it simple to schedule similar activities
 
 ## Version History
-##### v0.1 (in development)
+### v0.1 (in development)
  - Users can now create and schedule activities
  - Users can view their scheduled activities easily
  - Support for MacOS and iOS
 
 ## Future Versions
-##### v0.2
+### v0.2
  - Users can set reminders for activities
  - Users can create custom activity templates
 
-##### v0.3
+### v0.3
  - Users can now add custom colors for activities more easily
  - More default templates are available
 
-##### v0.4
+### v0.4
  - Recurrent is now available on MacOS
  - UI is now optimized for more devices
  - UI bugs are (mostly) fixed
